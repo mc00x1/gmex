@@ -1,0 +1,2 @@
+# gmex
+gMeX Gradle Plugin 

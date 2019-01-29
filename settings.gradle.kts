@@ -1,19 +1,21 @@
-rootProject.name = "gmex"
+includeAllSubProjects()
+setProperSubProjectNames()
 
-rootProject.children.stream().map {
-    it.name = rootProject.name + "-" + it.name.replace('/', '-')
+fun includeAllSubProjects() {
+    fileTree(".").matching {
+        exclude("build.gradle")
+        exclude("build.gradle.kts")
+        exclude("buildSrc/**/*build.gradle*")
+        include("**/*build.gradle")
+        include("**/*build.gradle.kts")
+    }.forEach {
+        val path = relativePath(it.parent)
+        include(path)
+    }
 }
 
-fileTree(".") {
-    include("**/*/build.gradle.kts")
-    exclude("*")
-    exclude("build.gradle")
-    exclude("build.gradle.kts")
-    exclude("settings.gradle.kts")
-}.visit {
-    println(this)
-//    include(this.relativePath.toString())
+fun setProperSubProjectNames() {
+    rootProject.children.stream().forEach {
+        it.name = "${rootProject.name}-${it.name.replace('/', '-')}"
+    }
 }
-
-
-

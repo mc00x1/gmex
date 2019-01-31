@@ -1,6 +1,7 @@
-import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 
-description = "gMeX Plugins"
+//description = "gMeX Plugins"
 
-val kotlinVersion = getKotlinPluginVersion()
+plugins {
+
+}
 

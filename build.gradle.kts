@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm").version("1.3.20").apply(true)
+    kotlin("jvm").version("1.3.11").apply(true)
 }
 
 val kotlinVersion = getKotlinPluginVersion()
@@ -30,30 +30,27 @@ allprojects {
             kotlinOptions.jvmTarget = jvmTarget.toString()
         }
 
-        withType<Test> {
-            useJUnitPlatform {
-                includeEngines("junit-jupiter", "junit-vintage")
-            }
-        }
+//        withType<Test> {
+//            useJUnitPlatform {
+//                includeEngines("junit-jupiter", "junit-vintage")
+//            }
+//        }
 
-        withType<JavaCompile> {
-            sourceCompatibility = jvmTarget.toString()
-            targetCompatibility = jvmTarget.toString()
-        }
+//        withType<JavaCompile> {
+//            sourceCompatibility = jvmTarget.toString()
+//            targetCompatibility = jvmTarget.toString()
+//        }
     }
 }
 
-val gmexTestCompile: Configuration by configurations.creating
-val gmexTestRuntime: Configuration by configurations.creating
+//val gmexTestCompile: Configuration by configurations.creating
+//val gmexTestRuntime: Configuration by configurations.creating
 
 dependencies {
-    gmexTestCompile(project(":gmex-dependencies-test-compile"))
-    gmexTestRuntime(project(":gmex-dependencies-test-runtime"))
-
-    //    implementation(kotlin("stdlib", kotlinVersion))
-    //    implementation(kotlin("reflect", kotlinVersion))
-    //    compile(kotlin("gradle-plugin", kotlinVersion))
-    //    compile(kotlin("allopen", kotlinVersion))
+        implementation(kotlin("stdlib", kotlinVersion))
+        implementation(kotlin("reflect", kotlinVersion))
+        compile(kotlin("gradle-plugin", kotlinVersion))
+        compile(kotlin("allopen", kotlinVersion))
 }
 
 

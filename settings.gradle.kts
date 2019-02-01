@@ -10,7 +10,7 @@ fun includeAllSubProjects() {
         include("**/*build.gradle.kts")
     }.forEach {
         val path = relativePath(it.parent)
-//        include(path)
+        include(path)
     }
 }
 

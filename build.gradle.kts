@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm").version("1.3.11").apply(true)
+    kotlin("jvm").version(gmex.Versions.Plugin.KOTLIN).apply(true)
 }
 
 val kotlinVersion = getKotlinPluginVersion()
@@ -51,6 +51,11 @@ dependencies {
         implementation(kotlin("reflect", kotlinVersion))
         compile(kotlin("gradle-plugin", kotlinVersion))
         compile(kotlin("allopen", kotlinVersion))
+
+    // Make the root project archives configuration depend on every sub-project
+    subprojects.forEach {
+        archives(it)
+    }
 }
 
 

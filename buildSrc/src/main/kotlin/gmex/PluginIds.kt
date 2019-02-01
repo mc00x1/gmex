@@ -10,4 +10,8 @@ object PluginIds {
         const val KOTLIN = "org.jetbrains.kotlin.jvm"
     }
 
+    object Java {
+        const val GRADLE = "org.gradle.java-gradle-plugin"
+    }
+
 }

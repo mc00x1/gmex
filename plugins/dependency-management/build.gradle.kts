@@ -4,8 +4,8 @@ description = "gMeX Dependency Management Plugin"
 
 plugins {
 
-    id(gmex.PluginIds.Kotlin.KOTLIN)
     id(gmex.PluginIds.Java.GRADLE)
+    id(gmex.PluginIds.Kotlin.KOTLIN)
 
 }
 

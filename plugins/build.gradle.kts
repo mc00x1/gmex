@@ -1,7 +1,3 @@
+description = "gMeX Plugins"
 
-//description = "gMeX Plugins"
-
-plugins {
-
-}
 

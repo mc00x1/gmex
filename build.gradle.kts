@@ -11,19 +11,19 @@ val kotlinVersion = getKotlinPluginVersion()
 
 allprojects {
     repositories {
-        google()
-        mavenLocal()
-        gradlePluginPortal()
         maven("http://nexus/content/repositories/snapshots/")
         maven("http://nexus/content/repositories/releases/")
         maven("http://nexus/content/groups/public")
         maven("http://nexus/content/repositories/central/")
+        google()
+        gradlePluginPortal()
+        mavenLocal()
     }
 
     tasks {
         withType<Wrapper> {
             gradleVersion = gmex.Versions.Gradle.WRAPPER
-
+            distributionType = Wrapper.DistributionType.ALL
         }
 
         withType<KotlinCompile> {

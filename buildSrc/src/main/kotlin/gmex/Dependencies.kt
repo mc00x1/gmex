@@ -15,8 +15,11 @@ object Dependencies {
     }
 
     object Test {
-        val JUNIT_COMPILE = "org.junit.jupiter:junit-jupiter-api:${Versions.Test.JUNIT}"
-        val JUNIT_RUNTIME = "org.junit.jupiter:junit-jupiter-engine:${Versions.Test.JUNIT}"
+        val JUNIT_API = "org.junit.jupiter:junit-jupiter-api:${Versions.Test.JUNIT}"
+        val JUNIT_ENGINE = "org.junit.jupiter:junit-jupiter-engine:${Versions.Test.JUNIT}"
+        val JUNIT_SUPPORT = "org.junit.jupiter:junit-jupiter-migrationsupport:${Versions.Test.JUNIT}"
+        val JUNIT_RUNNER = "org.junit.jupiter:junit-platform-runner:${Versions.Test.JUNIT}"
+        val JUNIT_PARAMS = "org.junit.jupiter:junit-jupiter-params:${Versions.Test.JUNIT}"
     }
 
     object Mock {

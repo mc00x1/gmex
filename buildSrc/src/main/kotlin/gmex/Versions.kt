@@ -13,7 +13,7 @@ object Versions {
     }
 
     object Gradle {
-        const val WRAPPER = "5.1.1"
+        const val WRAPPER = "5.2.1"
     }
 
     object Plugin {
@@ -21,7 +21,7 @@ object Versions {
     }
 
     object Test {
-        const val JUNIT = "5.3.2"
+        const val JUNIT = "5.4.0"
     }
 
     object Mock {

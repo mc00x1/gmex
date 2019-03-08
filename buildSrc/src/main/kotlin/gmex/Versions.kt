@@ -17,7 +17,7 @@ object Versions {
     }
 
     object Plugin {
-        const val KOTLIN = "1.3.11"
+        const val KOTLIN = "1.3.20"
     }
 
     object Test {
@@ -26,6 +26,10 @@ object Versions {
 
     object Mock {
         const val MOCK_K = "1.9"
+    }
+
+    object Spring {
+        const val DEPENDENCY_MANAGEMENT = "1.0.7.RELEASE"
     }
 
 }

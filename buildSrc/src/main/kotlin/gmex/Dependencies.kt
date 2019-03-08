@@ -25,5 +25,10 @@ object Dependencies {
     object Mock {
         val MOCK_K = "io.mockk:mockk:${Versions.Mock.MOCK_K}"
     }
+
+    object Spring {
+        val DEPENDENCY_MANAGEMENT =
+                "io.spring.gradle:dependency-management-plugin:${Versions.Spring.DEPENDENCY_MANAGEMENT}"
+    }
 }
 

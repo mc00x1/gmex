@@ -3,20 +3,30 @@ package gmex
 import org.gradle.testfixtures.ProjectBuilder
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
+import org.gradle.tooling.GradleConnector
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import java.io.File
 import java.io.OutputStreamWriter
 
 
-internal class DependencyManagementPluginUnitTest {
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class DependencyManagementPluginUnitTest {
 
     private val testGroup = "test-group"
     private val testArtifact = "test-artifact"
     private val testVersion = "test-version"
 
+    fun setup() {}
+
     @Test
     fun testInstantiate() {
+        installPluginIntoMavenLocal()
         installResolvableArtifact(testGroup, testArtifact, testVersion)
+    }
+
+    private fun installPluginIntoMavenLocal() {
+//        TODO("not implemented")
     }
 
     private fun installResolvableArtifact(group: String, artifact: String,
@@ -28,6 +38,7 @@ internal class DependencyManagementPluginUnitTest {
         project.pluginManager.apply("maven")
         project.pluginManager.apply("maven-publish")
 
+//        GradleConnector.newConnector().connect()
         project.group = group
         project.version = version
 
@@ -40,6 +51,12 @@ internal class DependencyManagementPluginUnitTest {
                     id("maven-publish")
                 }
         """.trimIndent())
+
+        val currentDir = getCurrentDirectory()
+        val pluginRoot = currentDir.parentFile.parentFile
+        val pluginDirs = pluginRoot.listFiles(File::isDirectory)
+
+        //FileUtils.copyDirectory(project.projectDir.parentFile)
 
         val build = GradleRunner.create()
                 .withProjectDir(project.projectDir)
@@ -58,6 +75,8 @@ internal class DependencyManagementPluginUnitTest {
 
         return true
     }
+
+    private fun getCurrentDirectory() = File(".").absoluteFile
 
     private fun isSuccess(jarOutcome: TaskOutcome?,
                           installOutcome: TaskOutcome?) =

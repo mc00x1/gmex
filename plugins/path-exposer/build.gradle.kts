@@ -3,13 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.js.resolve.JsPlatform
 
-description = "gMeX Dependency Management Plugin"
-
-repositories {
-    maven {
-        url = uri("https://plugins.gradle.org/m2/")
-    }
-}
+description = "gMeX Path Exposer Plugin"
 
 plugins {
     id(gmex.PluginIds.Java.GRADLE)
@@ -18,16 +12,10 @@ plugins {
 
 gradlePlugin {
     plugins {
-        create("dependencyManagementPlugin") {
-            id = "gmex.dependency-management"
-            implementationClass = "DependencyManagementPlugin"
+        create("pathExposerPlugin") {
+            id = "gmex.path-exposer"
+            implementationClass = "PathExposerPlugin"
         }
-    }
-}
-
-sourceSets {
-    create("testProjects") {
-        allSource.setSrcDirs(listOf("src/test/projects"))
     }
 }
 
@@ -38,16 +26,10 @@ dependencies {
 
 fun DependencyHandlerScope.implementation() {
     implementationKotlin()
-    implementationBuildSrc()
-    implementationSpringDependencyManagement()
 }
 
 fun DependencyHandlerScope.implementationKotlin() {
     implementation(gmex.Dependencies.Kotlin.KOTLIN)
-}
-
-fun DependencyHandlerScope.implementationBuildSrc() {
-    implementation(fileTree("${project.rootDir}/buildSrc/build/"))
 }
 
 fun DependencyHandlerScope.testImplementation() {
@@ -68,8 +50,4 @@ fun DependencyHandlerScope.testImplementationMock() {
 
 fun DependencyHandlerScope.testImplementationBuildSrc() {
     testImplementation(fileTree("${project.rootDir}/buildSrc/build/"))
-}
-
-fun DependencyHandlerScope.implementationSpringDependencyManagement() {
-    implementation(gmex.Dependencies.Spring.DEPENDENCY_MANAGEMENT)
 }

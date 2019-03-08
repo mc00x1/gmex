@@ -6,7 +6,8 @@ package gmex
 
 object PluginIds {
 
-    object Kotlin {
+    object JetBrains {
+        const val IDEA = "org.gradle.idea"
         const val KOTLIN = "org.jetbrains.kotlin.jvm"
     }
 

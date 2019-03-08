@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id(gmex.PluginIds.Kotlin.KOTLIN).version(gmex.Versions.Plugin.KOTLIN)
+    id(gmex.PluginIds.JetBrains.KOTLIN).version(gmex.Versions.Plugin.KOTLIN)
 }
 
 val kotlinVersion = getKotlinPluginVersion()

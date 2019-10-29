@@ -1,7 +1,6 @@
 import org.gradle.api.internal.HasConvention
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
-import org.jetbrains.kotlin.js.resolve.JsPlatform
 
 description = "gMeX Path Exposer Plugin"
 

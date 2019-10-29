@@ -9,7 +9,6 @@ import org.junit.jupiter.api.TestInstance
 import java.io.File
 import java.io.OutputStreamWriter
 
-
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DependencyManagementPluginUnitTest {
 
@@ -26,7 +25,6 @@ class DependencyManagementPluginUnitTest {
     }
 
     private fun installPluginIntoMavenLocal() {
-//        TODO("not implemented")
     }
 
     private fun installResolvableArtifact(group: String, artifact: String,
@@ -38,7 +36,7 @@ class DependencyManagementPluginUnitTest {
         project.pluginManager.apply("maven")
         project.pluginManager.apply("maven-publish")
 
-//        GradleConnector.newConnector().connect()
+
         project.group = group
         project.version = version
 
@@ -57,6 +55,7 @@ class DependencyManagementPluginUnitTest {
         val pluginDirs = pluginRoot.listFiles(File::isDirectory)
 
         //FileUtils.copyDirectory(project.projectDir.parentFile)
+        //GradleConnector.newConnector().forProjectDirectory(null).connect()
 
         val build = GradleRunner.create()
                 .withProjectDir(project.projectDir)

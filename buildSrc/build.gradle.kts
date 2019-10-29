@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-description = "BuildSrc Module"
+description = "gMeX BuildSrc Module"
 
 plugins {
     `kotlin-dsl`

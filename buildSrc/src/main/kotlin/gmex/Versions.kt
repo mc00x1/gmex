@@ -13,11 +13,11 @@ object Versions {
     }
 
     object Gradle {
-        const val WRAPPER = "5.2.1"
+        const val WRAPPER = "5.4.1"
     }
 
     object Plugin {
-        const val KOTLIN = "1.3.20"
+        const val KOTLIN = "1.3.50"
     }
 
     object Test {

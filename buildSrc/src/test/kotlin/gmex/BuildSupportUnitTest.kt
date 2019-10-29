@@ -11,6 +11,6 @@ internal class BuildSupportUnitTest {
     @Test
     fun testGetTestProjectsReturnsEmptyStream() {
 //        val root = File(".").toPath()
-//        BuildSupport.getTestProjectsDirectories(root)
+//        BuildSupport.getDirectories(root)
     }
 }

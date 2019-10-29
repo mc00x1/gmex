@@ -1,5 +1,3 @@
-import gmex.PluginIds
-import org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -49,7 +47,6 @@ dependencies {
     compile(kotlin("gradle-plugin", kotlinVersion))
     compile(kotlin("allopen", kotlinVersion))
 
-    // Make the root project archives configuration depend on every sub-project
     subprojects.forEach {
         archives(it)
     }

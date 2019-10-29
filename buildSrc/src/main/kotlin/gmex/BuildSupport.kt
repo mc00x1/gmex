@@ -33,7 +33,7 @@ object BuildSupport {
         }
     }
 
-    fun getTestProjectsDirectories(path: Path): Stream<Path> =
+    fun getDirectories(path: Path): Stream<Path> =
             if (isValid(path)) streamDirectories(path) else streamEmpty()
 
     private fun streamEmpty(): Stream<Path> = Stream.empty()
